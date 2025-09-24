@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import "./Appointment.css";
 
 const Appointment = () => {
   const [studentId, setStudentId] = useState("");

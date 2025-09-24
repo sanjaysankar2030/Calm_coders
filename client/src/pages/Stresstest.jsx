@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import styles from "./StressTest.css";
 
 const questions = [
   "In the last month, how often have you been upset because of something unexpected?",
@@ -44,8 +45,8 @@ const StressTest = () => {
   };
 
   return (
-    <div>
-      <h2>Stress Test (PSS-10)</h2>
+    <div className={styles.stressTestContainer}>
+      <h2 className={styles.header}>Stress Test (PSS-10)</h2>
       <form onSubmit={handleSubmit}>
         {questions.map((q, index) => (
           <div key={index}>
@@ -53,6 +54,7 @@ const StressTest = () => {
             <select
               value={answers[index] ?? ""}
               onChange={(e) => handleChange(index, e.target.value)}
+              className={styles.select}
               required
             >
               <option value="" disabled>
@@ -66,13 +68,15 @@ const StressTest = () => {
             </select>
           </div>
         ))}
-        <button type="submit">Submit</button>
+        <button type="submit" className={styles.submitButton}>
+          Submit
+        </button>
       </form>
 
       {score !== null && (
         <div>
-          <h3>Your Score: {score}</h3>
-          <p>Analysis: {analysis}</p>
+          <h3 className={styles.score}>Your Score: {score}</h3>
+          <p className={styles.analysis}>Analysis: {analysis}</p>
         </div>
       )}
     </div>

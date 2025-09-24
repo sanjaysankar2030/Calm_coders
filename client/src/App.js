@@ -5,7 +5,7 @@ import Chatbot from "./pages/Chatbot";
 import StressTest from "./pages/Stresstest";
 import Appointment from "./pages/Appointment";
 import Spotify from "./pages/Spotify";
-
+import "./App.css";
 function App() {
   return (
     <Router>
@@ -13,7 +13,7 @@ function App() {
         <Link to="/">Landing</Link> |<Link to="/phq-test">PHQ-9 Test</Link> |
         <Link to="/chatbot">Chatbot</Link> |
         <Link to="/stress-test">Stress Test</Link> |
-        <Link to="/appointment">Appointment</Link>
+        <Link to="/appointment">Appointment</Link>|
         <Link to="/spotify">Ambient Music</Link>
       </nav>
       <Routes>

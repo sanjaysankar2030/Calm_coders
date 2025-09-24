@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+//import "./Chatbot.css"; // Make sure this path is correct
 
 const Chatbot = () => {
   const [messages, setMessages] = useState([]);
@@ -25,32 +26,19 @@ const Chatbot = () => {
   };
 
   return (
-    <div>
+    <div className="chatbot-container">
       <h2>Consoling Chatbot</h2>
-      <div
-        className="chat-window"
-        style={{
-          border: "1px solid #ccc",
-          padding: "10px",
-          height: "300px",
-          overflowY: "scroll",
-        }}
-      >
+
+      <div className="chat-window">
         {messages.map((m, i) => (
-          <div
-            key={i}
-            style={{ textAlign: m.type === "user" ? "right" : "left" }}
-          >
+          <div key={i} className={`message ${m.type}`}>
             <strong>{m.type === "user" ? "You" : "Bot"}:</strong> {m.text}
           </div>
         ))}
       </div>
-      <form onSubmit={handleSubmit}>
-        <input
-          name="msg"
-          placeholder="Type something..."
-          style={{ width: "80%" }}
-        />
+
+      <form onSubmit={handleSubmit} className="chat-form">
+        <input name="msg" placeholder="Type something..." />
         <button type="submit">Send</button>
       </form>
     </div>

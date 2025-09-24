@@ -1,4 +1,4 @@
-// src/Spotify.js
+import "./Spotify.css";
 import React, { useState } from "react";
 
 const tracks = [
@@ -48,25 +48,29 @@ const Spotify = () => {
   };
 
   return (
-    <div>
-      <h2>Calm & Soothing Music</h2>
-      <ul>
-        {tracks.map((track, i) => (
-          <li key={i}>
-            <strong>{track.name}</strong> by {track.artist}
-            <button onClick={() => playTrack(track)}>Play</button>
-          </li>
-        ))}
-      </ul>
+    <div className="app-container">
+      <div className="music-player">
+        <h2>Calm & Soothing Music</h2>
+        <ul>
+          {tracks.map((track, i) => (
+            <li key={i}>
+              <div>
+                <strong>{track.name}</strong> by {track.artist}
+              </div>
+              <button onClick={() => playTrack(track)}>Play</button>
+            </li>
+          ))}
+        </ul>
 
-      {currentTrack && (
-        <div>
-          <h3>Now Playing: {currentTrack.name}</h3>
-          <button onClick={togglePlayPause}>
-            {isPlaying ? "Pause" : "Play"}
-          </button>
-        </div>
-      )}
+        {currentTrack && (
+          <div className="now-playing">
+            <h3>Now Playing: {currentTrack.name}</h3>
+            <button onClick={togglePlayPause}>
+              {isPlaying ? "Pause" : "Play"}
+            </button>
+          </div>
+        )}
+      </div>
     </div>
   );
 };

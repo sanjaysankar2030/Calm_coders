@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import "./Phq-9.css";
 
 export default function PhqTest() {
   const questions = [
@@ -49,37 +50,41 @@ export default function PhqTest() {
   };
 
   return (
-    <div>
+    <div className="phq-container">
       <h1>PHQ-9 Test</h1>
       <form onSubmit={handleSubmit}>
         {questions.map((q, i) => (
-          <div key={i}>
-            <p>
+          <div key={i} className="question-block">
+            <h3>
               {i + 1}. {q}
-            </p>
-            {options.map((opt) => (
-              <label key={opt.value} style={{ marginRight: "10px" }}>
-                <input
-                  type="radio"
-                  name={`q${i}`}
-                  value={opt.value}
-                  checked={answers[i] === opt.value}
-                  onChange={(e) => handleChange(i, e.target.value)}
-                  required
-                />
-                {opt.label}
-              </label>
-            ))}
+            </h3>
+            <div className="options">
+              {options.map((opt) => (
+                <label key={opt.value}>
+                  <input
+                    type="radio"
+                    name={`q${i}`}
+                    value={opt.value}
+                    checked={answers[i] === opt.value}
+                    onChange={(e) => handleChange(i, e.target.value)}
+                    required
+                  />
+                  {opt.label}
+                </label>
+              ))}
+            </div>
           </div>
         ))}
         <button type="submit">Submit</button>
       </form>
 
-      {score !== null && <h2>Your PHQ-9 Score: {score}</h2>}
-      <p>
-        If you want, you can also take the{" "}
-        <Link to="/stress-test">Stress Test</Link> to know your stress level.
-      </p>
+      {score !== null && <h2 className="score">Your PHQ-9 Score: {score}</h2>}
+      <div className="phq-link">
+        <p>
+          If you want, you can also take the{" "}
+          <Link to="/stress-test">Stress Test</Link> to know your stress level.
+        </p>
+      </div>
     </div>
   );
 }
