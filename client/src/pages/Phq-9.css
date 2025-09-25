@@ -74,11 +74,12 @@ button[type="submit"]:hover {
 }
 
 .phq-link a {
-  color: #0077b6;
+  color: blue;
   text-decoration: none;
   font-weight: bold;
 }
 
 .phq-link a:hover {
   text-decoration: underline;
+  color: green;
 }

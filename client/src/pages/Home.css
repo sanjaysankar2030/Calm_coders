@@ -1,12 +1,25 @@
 /* Home.css */
-
-.stress-test-link {
-  color: red;
-  font-size: 3rem;
-  margin: 0;
+.stress-test-link > p {
+  font-family: "Roboto Slab", serif; /* Bold, professional font */
+  font-weight: 30; /* Extra bold */
+  font-size: 20px; /* Large, eye-catching size */
+  letter-spacing: 1px; /* Subtle spacing for readability */
+  color: #ffffff; /* Clean white text */
+  text-shadow: none; /* Makes text pop without color */
+  display: inline-block; /* Shrinks div to text width */
+  padding: 0.2em 0.4em; /* Minimal padding */
+  transition:
+    transform 0.2s ease,
+    text-shadow 0.2s ease; /* Smooth hover */
 }
+
+.stress-test-link:hover {
+  transform: scale(1.08); /* Slight zoom on hover */
+  text-shadow: 2px 2px 12px rgba(0, 0, 0, 0.7); /* Stronger pop on hover */
+}
+
 .landing-page {
-  background-image: url("home.png"); /* Optional: background image */
+  background-image: url("relaxing.jpg"); /* Optional: background image */
   background-size: cover;
   background-position: center;
   height: 100vh; /* Full screen height */
@@ -17,13 +30,13 @@
   text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
 }
 .glass-box {
-  background: rgba(255, 255, 255, 0.1); /* Semi-transparent */
+  background: rgba(255, 255, 255, 0.08); /* More transparent */
   border-radius: 16px;
   padding: 30px 60px;
-  backdrop-filter: blur(10px); /* Glass blur */
-  -webkit-backdrop-filter: blur(10px); /* Safari support */
-  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37); /* Soft shadow */
-  border: 1px solid rgba(255, 255, 255, 0.2); /* Soft border */
+  backdrop-filter: blur(12px); /* Softer, more frosted effect */
+  -webkit-backdrop-filter: blur(12px); /* Safari support */
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.25); /* Softer shadow */
+  border: 1px solid rgba(255, 255, 255, 0.15); /* Subtle border */
   text-align: center;
 }
 

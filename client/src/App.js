@@ -7,17 +7,19 @@ import Appointment from "./pages/Appointment";
 import Spotify from "./pages/Spotify";
 import ResultsPage from "./pages/ResultsPage";
 import Appointment_Dash from "./pages/AppointmentDashBoard";
+import TedPlayer from "./pages/TedTalk";
 
 import "./App.css";
 function App() {
   return (
     <Router>
       <nav>
-        <Link to="/">Landing</Link> |<Link to="/phq-test">PHQ-9 Test</Link> |
-        <Link to="/chatbot">Chatbot</Link> |
-        <Link to="/stress-test">Stress Test</Link> |
+        <Link to="/">Landing</Link> |<Link to="/phq-test">PHQ-9 Test</Link>|
+        <Link to="/chatbot">Chatbot</Link>|
+        <Link to="/stress-test">Stress Test</Link>|
         <Link to="/appointment">Appointment</Link>|
-        <Link to="/spotify">Ambient Music</Link>
+        <Link to="/spotify">Ambient Music</Link>|
+        <Link to="/ted-talk">Ted Talk</Link>
         <Link to="/results">View Results</Link>
         <Link to="/appointment-dashboard">View Appointments</Link>
       </nav>
@@ -30,6 +32,7 @@ function App() {
         <Route path="/spotify" element={<Spotify />} />
         <Route path="/results" element={<ResultsPage />} />
         <Route path="/appointment-dashboard" element={<Appointment_Dash />} />
+        <Route path="/ted-talk" element={<TedPlayer />} />
       </Routes>
     </Router>
   );
