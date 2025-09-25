@@ -1,7 +1,7 @@
 /* Appointment.css */
 .appointment-container {
-  max-width: 500px;
-  margin: 50px auto;
+  max-width: 700px;
+  margin: 150px auto;
   padding: 30px;
   background: url("home.png"); /* combines both */
   border-radius: 12px;

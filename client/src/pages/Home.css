@@ -1,5 +1,10 @@
 /* Home.css */
 
+.stress-test-link {
+  color: red;
+  font-size: 3rem;
+  margin: 0;
+}
 .landing-page {
   background-image: url("home.png"); /* Optional: background image */
   background-size: cover;
@@ -9,7 +14,7 @@
   align-items: center; /* Vertical center */
   justify-content: center; /* Horizontal center */
   color: white;
-  /*text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);*/
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
 }
 .glass-box {
   background: rgba(255, 255, 255, 0.1); /* Semi-transparent */

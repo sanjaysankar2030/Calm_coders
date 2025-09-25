@@ -45,40 +45,42 @@ const StressTest = () => {
   };
 
   return (
-    <div className={styles.stressTestContainer}>
-      <h2 className={styles.header}>Stress Test (PSS-10)</h2>
-      <form onSubmit={handleSubmit}>
-        {questions.map((q, index) => (
-          <div key={index}>
-            <p>{q}</p>
-            <select
-              value={answers[index] ?? ""}
-              onChange={(e) => handleChange(index, e.target.value)}
-              className={styles.select}
-              required
-            >
-              <option value="" disabled>
-                Select an option
-              </option>
-              <option value="0">Never (0)</option>
-              <option value="1">Almost Never (1)</option>
-              <option value="2">Sometimes (2)</option>
-              <option value="3">Fairly Often (3)</option>
-              <option value="4">Very Often (4)</option>
-            </select>
-          </div>
-        ))}
-        <button type="submit" className={styles.submitButton}>
-          Submit
-        </button>
-      </form>
+    <div className="Body">
+      <div className={styles.stressTestContainer}>
+        <h2 className={styles.header}>Stress Test (PSS-10)</h2>
+        <form onSubmit={handleSubmit}>
+          {questions.map((q, index) => (
+            <div key={index}>
+              <p>{q}</p>
+              <select
+                value={answers[index] ?? ""}
+                onChange={(e) => handleChange(index, e.target.value)}
+                className={styles.select}
+                required
+              >
+                <option value="" disabled>
+                  Select an option
+                </option>
+                <option value="0">Never (0)</option>
+                <option value="1">Almost Never (1)</option>
+                <option value="2">Sometimes (2)</option>
+                <option value="3">Fairly Often (3)</option>
+                <option value="4">Very Often (4)</option>
+              </select>
+            </div>
+          ))}
+          <button type="submit" className={styles.submitButton}>
+            Submit
+          </button>
+        </form>
 
-      {score !== null && (
-        <div>
-          <h3 className={styles.score}>Your Score: {score}</h3>
-          <p className={styles.analysis}>Analysis: {analysis}</p>
-        </div>
-      )}
+        {score !== null && (
+          <div>
+            <h3 className={styles.score}>Your Score: {score}</h3>
+            <p className={styles.analysis}>Analysis: {analysis}</p>
+          </div>
+        )}
+      </div>
     </div>
   );
 };

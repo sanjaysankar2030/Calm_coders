@@ -5,6 +5,9 @@ import Chatbot from "./pages/Chatbot";
 import StressTest from "./pages/Stresstest";
 import Appointment from "./pages/Appointment";
 import Spotify from "./pages/Spotify";
+import ResultsPage from "./pages/ResultsPage";
+import Appointment_Dash from "./pages/AppointmentDashBoard";
+
 import "./App.css";
 function App() {
   return (
@@ -15,6 +18,8 @@ function App() {
         <Link to="/stress-test">Stress Test</Link> |
         <Link to="/appointment">Appointment</Link>|
         <Link to="/spotify">Ambient Music</Link>
+        <Link to="/results">View Results</Link>
+        <Link to="/appointment-dashboard">View Appointments</Link>
       </nav>
       <Routes>
         <Route path="/" element={<Landing />} />
@@ -23,6 +28,8 @@ function App() {
         <Route path="/stress-test" element={<StressTest />} />
         <Route path="/appointment" element={<Appointment />} />
         <Route path="/spotify" element={<Spotify />} />
+        <Route path="/results" element={<ResultsPage />} />
+        <Route path="/appointment-dashboard" element={<Appointment_Dash />} />
       </Routes>
     </Router>
   );
